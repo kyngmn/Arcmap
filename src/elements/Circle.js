@@ -1,4 +1,3 @@
-import { rgbToHex } from "@material-ui/core";
 import React from "react";
 import styled from "styled-components";
 
@@ -8,7 +7,7 @@ const Circle = (props) => {
     children,
     padding,
     is_flex,
-    __click,
+    _onClick,
     bg,
     bgimg,
     w,
@@ -67,7 +66,7 @@ Circle.defaultProps = {
   isRoot: false,
   children: null,
   is_flex: false,
-  __click: null,
+  _onClick: () => {},
   bg:
     "radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)",
   bgimg: false,
@@ -118,7 +117,7 @@ const CircleXY = styled.div`
     props.borderColor ? `0.5px solid ${props.borderColor}` : ""};
   margin: 0.1rem;
   background: #ffffff;
-  transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+  transition: width 1s cubic-bezier(0.175, 0.885, 0.32, 2.5),
     padding 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
     z-index 1s cubic-bezier(0.175, 0.885, 0.32, 1.275),
     display 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -134,7 +133,7 @@ const CircleXY = styled.div`
     padding: 10%;
     box-sizing: border-box;
     z-index: 100;
-    cursor: pointer;
+    /* cursor: pointer; */
     div {
       display: flex;
       flex-direction: column;
